@@ -43,7 +43,7 @@ public class MyRestApp {
 		
 	}
 	@PostMapping("/complaint")
-	public String userRegister2(@RequestParam(required=false,name="name") String name, @RequestParam(defaultValue="10",name="phonenumber") int phonenumber, @RequestParam(required=false,name="email") String email, @RequestParam(required=false,name="complaint1") String complaint1) {
+	public String userRegister2(@RequestParam("name") String name, @RequestParam("phonenumber") int phonenumber, @RequestParam("email") String email, @RequestParam("complaint") String complaint1) {
 	complaint f = new complaint(name, phonenumber, email,complaint1);
 	boolean data= service.addcomplaint(f);
 	if(data) {
