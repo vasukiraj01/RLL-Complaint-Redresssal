@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.example.demo.RestApi.Exception.EngineerNotFoundException;
 import com.example.demo.RestApi.Exception.ManagerNotFoundException;
-import com.example.demo.RestApi.Exception.UserNotFoundException;
+import com.example.demo.RestApi.Exception.AdminNotFoundException;
+import com.example.demo.RestApi.Exception.CustomerNotFoundException;
 
 @ControllerAdvice
 public class ComplainApiException {
@@ -17,14 +18,22 @@ public class ComplainApiException {
 		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 	
-	@ExceptionHandler(value=UserNotFoundException.class)
-	public ResponseEntity<Object> handleException(UserNotFoundException ex) {
+	@ExceptionHandler(value=AdminNotFoundException.class)
+	public ResponseEntity<Object> handleException(AdminNotFoundException ex) {
 		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 	
 	@ExceptionHandler(value=EngineerNotFoundException.class)
 	public ResponseEntity<Object> handleException(EngineerNotFoundException ex) {
 		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
+	@ControllerAdvice
+	public class CustomerExeceptionController {
+		
+		@ExceptionHandler(value=CustomerNotFoundException.class)
+		public ResponseEntity<Object> handleException(CustomerNotFoundException ex) {
+			return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
+		}
 	}
 
 }

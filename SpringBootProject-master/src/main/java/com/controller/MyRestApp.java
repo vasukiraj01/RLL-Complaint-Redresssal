@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entity.manager;
 import com.example.demo.RestApi.Exception.EngineerNotFoundException;
 import com.example.demo.RestApi.Exception.ManagerNotFoundException;
+import com.entity.Admin;
 import com.entity.EngineerDetails;
 import com.entity.ManagerDetails;
+import com.dao.AdminRepo;
 import com.dao.EngineerRepo;
 import com.dao.ManagerRepo;
 import com.entity.complaint;
@@ -31,6 +33,21 @@ public class MyRestApp {
 
 	@Autowired
 	private EngineerRepo engineerrepo;
+	
+	@Autowired
+	private AdminRepo adminrepo;
+	//Admin 
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/Admin")
+	public Iterable<Admin> getAdmin() {
+	
+		return adminrepo.findAll();
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping("/Admin")
+	public Admin create(@RequestBody Admin admin) {
+		return adminrepo.save(admin);
+	}
 
 	// Manager
 	@CrossOrigin(origins = "http://localhost:4200")

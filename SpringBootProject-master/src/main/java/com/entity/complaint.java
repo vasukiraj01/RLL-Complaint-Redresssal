@@ -11,28 +11,45 @@ import com.dao.MyRepo2;
 public class complaint {
 	@Override
 	public String toString() {
-		return "complaint [id=" + id + ", name=" + name + ", phone=" + phonenumber + ", email=" + email
+		return "complaint [id=" + cid + ", name=" + name + ", phone=" + phonenumber + ", email=" + email+ ",pincode=" + pincode
 				+"]";
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int cid;
 	private String name;
 	private int phonenumber;
 	private String email;
 	private String complaint1;
+	private String pincode;
 	
 	
 	
 	
 	
-	public int getId() {
-		return id;
+	public int getCid() {
+		return cid;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public int getId() {
+		return cid;
+	}
+
+	public void setId(int cid) {
+		this.cid = cid;
 	}
 
 	public String getName() {
@@ -80,6 +97,11 @@ public class complaint {
 		this.complaint1 = complaint1;
 		
 	}
+
+	public Integer getcid() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	}
 	
 	
-}
