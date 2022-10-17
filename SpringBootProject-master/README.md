@@ -1,12 +1,33 @@
-Manager-Engineer Operations.
+# SpringBootProject
 
-Managers can pick the tickets from the active ticket list and assign them to the engineers based on the PIN code of the customer (where the service is installed). 
-There should be different managers to take care of different PIN codes. You are expected to use at least about 5 – 10 different PIN codes and there should be as many managers for assignment.
+* It is a Spring Boot project that will capture user feedback using a REST endpoint & the REST resource will take in parameters using HTTP POST. The feedback data will be then added to a database table.
+* As a part of developing an ecommerce web application, a REST resource is needed to capture user feedback. Feedback data will be received from third-party apps and websites. The data will be sent to the REST API which will collect feedback from various sources.
 
+### Softwares used:
+* Eclipse as the IDE.
+* Apache Tomcat as the web server.
+* Spring Boot with Hibernate.
 
-Managers should also be able to see the status of all the tickets in all the areas.
+### Technologies used:
+* Java 8
+* Hibernate
+* MySQL Database
+* Spring-boot
 
-Engineers can log in and view all the tickets assigned to him/her and can pick the tickets assigned to them and assign it the status of ‘WIP”, (work on the case, which is dependent on the type of problem and resolve) and update the status as ‘RESOLVED’. 
+### Steps:
+* Created a MySQL table named feedback for storing feedback data.
+* An entity class Feedback is made with annotations to link it with the feedback table.
+* A repository class will then map the entity class to the CrudRepository interface.
+* Created a REST controller class to create the REST endpoint. It takes in parameters using the POST protocol.
+* Data received in the REST controller will be then saved into the database.
+* Created a test form in HTML to submit data to the REST endpoint to ensure it’s working.
 
+### Output
 
-In case they are not able to resolve the issue at their end, they can remark that this needs to be reassigned to Field Workers in case of a cable fault or at the customers’ site, and flag it as ‘ESCALATED”
+<kbd>![](images/1.PNG)</kbd>
+
+<kbd>![](images/2.PNG)</kbd>
+
+<kbd>![](images/3.PNG)</kbd>
+
+<kbd>![](images/4.PNG)</kbd>
